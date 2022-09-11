@@ -1,7 +1,8 @@
 /**
  * @author Katta Vinay Chowdary
- *
  * Student ID: A20519089
+ * File Name: AccountHolder.java
+ * Program that performs various bank transactions
  */
 package lab1;
 
@@ -21,7 +22,7 @@ public class AccountHolder {
 	}
 
 	/**
-	 * Increase the account holder’s current balance accordingly.
+	 * Increase the account holder’s current balance on every deposit.
 	 * 
 	 * @param amount Deposit amount
 	 */
@@ -33,8 +34,7 @@ public class AccountHolder {
 	}
 
 	/**
-	 * Decrease the account holder’s current balance and validate accounts minimum
-	 * maintaining balance accordingly.
+	 * Decrease the account holder’s current balance and validate accounts minimum maintaining balance on withdrawal.
 	 * 
 	 * @param amount withdrawal amount
 	 */
@@ -54,6 +54,9 @@ public class AccountHolder {
 		balance -= amount;
 	}
 
+	/**
+	 * Calculate interest amount that bank pays into your account monthly based on the balance
+	 */
 	public void monthlyInterest() {
 		if (annualInterestRate < 0) {
 			throw new IllegalArgumentException("Interest rate cannot be negative");
@@ -62,8 +65,7 @@ public class AccountHolder {
 	}
 
 	/**
-	 * Calculate interest amount that bank pays into your account monthly based on
-	 * the balance
+	 * Interest Computation Utility
 	 * 
 	 * @param rate   Rate of interest
 	 * @param amount Balance of the account holder
@@ -89,7 +91,7 @@ public class AccountHolder {
 
 	/**
 	 * @param value is either Initial Balance, Deposit or Withdraw Text
-	 * @param in
+	 * @param in Scanner class object
 	 * @return amount of Account holders
 	 */
 	public static double userInputValidation(String value, Scanner in) {

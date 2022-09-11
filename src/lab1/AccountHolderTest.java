@@ -1,7 +1,8 @@
 /**
  * @author Katta Vinay Chowdary
- *
  * Student ID: A20519089
+ * File Name: AccountHolderTest.java
+ * Main class to execute different transactions
  */
 package lab1;
 
@@ -12,21 +13,19 @@ public class AccountHolderTest {
 	public static void main(String args[]) {
 		double initialBalance;
 		double depositAmount;
-
-		Scanner input = new Scanner(System.in);
+		double withdrawAmount = 0;
 		AccountHolder.annualInterestRate = 4.0;
-
+		
+		Scanner input = new Scanner(System.in);
 		System.out.println("Please enter your initial balance");
 		initialBalance = AccountHolder.userInputValidation("Initial Balance", input);
 
 		AccountHolder accHolder = new AccountHolder(initialBalance);
 
 		System.out.println("Please enter the deposit amount");
-
 		depositAmount = AccountHolder.userInputValidation("Deposit", input);
 		accHolder.deposit(depositAmount);
 
-		double withdrawAmount = 0;
 		Scanner in = new Scanner(System.in);
 		while (true) {
 			try {
@@ -35,8 +34,7 @@ public class AccountHolderTest {
 				accHolder.withdraw(withdrawAmount);
 				break;
 			} catch (UnsupportedOperationException e) {
-				System.out
-						.println("If you want to continue, please press 'Enter' key else enter any other key to Exit");
+				System.out.println("Please press ENTER/RETURN to continue or any KEY to abort");
 				String n = in.nextLine();
 				if (n.length() != 0) {
 					break;
@@ -44,7 +42,7 @@ public class AccountHolderTest {
 			}
 		}
 		accHolder.monthlyInterest();
-		System.out.printf("Balance with interest applied = $%.2f \n", accHolder.balance);
+		System.out.printf("\nBalance with interest applied = $%.2f", accHolder.balance);
 		in.close();
 		input.close();
 	}
