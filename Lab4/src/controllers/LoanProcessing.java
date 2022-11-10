@@ -15,7 +15,7 @@ public class LoanProcessing extends BankRecords {
 		br.readData();
 		DaoModel dao = new DaoModel();
 		//dao.createTable();
-		dao.insertRecords(brRecords); // perform inserts
+		//dao.insertRecords(brRecords); // perform inserts
 		ResultSet rs;
 		rs = dao.retrieveRecords();
 		new LoanView().runView(rs);
