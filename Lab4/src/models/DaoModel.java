@@ -53,7 +53,7 @@ public class DaoModel {
 			// Include all object data to the database table
 			for (int i = 0; i < robjs.length; ++i) {
 
-				sql = "Insert Into v_katta_tab(pid, id, income, pep)" + " values(?,?,?,?)";
+				sql = "Insert Into k_vinay_tab(pid, id, income, pep)" + " values(?,?,?,?)";
 				System.out.println(sql);
 
 				preparedStatement = conn.connect().prepareStatement(sql);
@@ -62,10 +62,17 @@ public class DaoModel {
 				preparedStatement.setString(2, robjs[i].getId());
 				preparedStatement.setDouble(3, robjs[i].getIncome());
 				preparedStatement.setString(4, robjs[i].getPep());
+				preparedStatement.addBatch();
 				count = count + 1;
 				preparedStatement.executeUpdate();
 
 			}
+			try {
+                // Batch insert the data
+				preparedStatement.executeBatch();
+            } catch (SQLException e) {
+                System.out.println("Error while inserting the data: " + e.getMessage());
+            }
 			conn.connect().close();
 		} catch (SQLException se) {
 			se.printStackTrace();

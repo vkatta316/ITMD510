@@ -43,7 +43,7 @@ public class Records extends BankRecords {
 	/*
 	 * Calculate average income per gender
 	 */
-	private static void averageIncomePerGender() {
+	public static void averageIncomePerGender() {
 		Arrays.sort(brRecords, new SexComparator(1));
 
 		// variables to gather number & to determine average income by sex
@@ -64,23 +64,12 @@ public class Records extends BankRecords {
 		System.out.printf("Average income for Females: $%.2f", (femInc / femCt));
 		System.out.printf("\nAverage income for Males: $%.2f\n", (maleInc / maleCt));
 
-		try {
-			fw.write("Average income for Females: $" + String.format("%.2f", femInc / femCt));
-			fw.write("\n");
-			fw.write("Average income for Males: $" + String.format("%.2f", maleInc / maleCt));
-			fw.write("\n");
-			fw.write("\n");
-		} catch (IOException e) {
-			System.out.println("IO Exception while writing AvgComp analysis: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("Unknow Exception while writing AvgComp analysis: " + e.getMessage());
-		}
 	}
 
 	/*
 	 * Calculate Number of females with a mortgage and savings account
 	 */
-	private static void femalesWithMortgageAndSavingsAccount() {
+	public static void femalesWithMortgageAndSavingsAccount() {
 		Arrays.sort(brRecords, new MortgageComparator(-1));
 		Arrays.sort(brRecords, new SavingAccountComparator(-1));
 		Arrays.sort(brRecords, new SexComparator(1));
@@ -97,21 +86,12 @@ public class Records extends BankRecords {
 		// Display result to console and to file
 		System.out.printf("\nNumber of females with a mortgage and savings account: %d\n", femCt);
 
-		try {
-			fw.write("Number of females with a mortgage and savings account: " + femCt);
-			fw.write("\n");
-			fw.write("\n");
-		} catch (IOException e) {
-			System.out.println("IO Exception while writing femsComp analysis: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("Unknow Exception while writing femsComp analysis: " + e.getMessage());
-		}
 	}
 
 	/*
 	 * Calculate Males with both a car and children per location
 	 */
-	private static void malesWithCarAndChildPerLocation() {
+	public static void malesWithCarAndChildPerLocation() {
 		Arrays.sort(brRecords, new LocationComparator(1));
 		Arrays.sort(brRecords, new CarComparator(-1));
 		Arrays.sort(brRecords, new SexComparator(-1));
@@ -137,17 +117,6 @@ public class Records extends BankRecords {
 		for (String loc : locationVsMaleCount.keySet()) {
 			System.out.printf("\n%s males with both a car & 1 child per location: %d",
 					loc.substring(0, 1).toUpperCase() + loc.substring(1).toLowerCase(), locationVsMaleCount.get(loc));
-		}
-		try {
-			for (String loc : locationVsMaleCount.keySet()) {
-				fw.write(loc.substring(0, 1).toUpperCase() + loc.substring(1).toLowerCase()
-						+ " males with both a car & 1 child per location: " + locationVsMaleCount.get(loc));
-				fw.write("\n");
-			}
-		} catch (IOException e) {
-			System.out.println("IO Exception while writing malesComp analysis: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("Unknown Exception while writing malesComp analysis: " + e.getMessage());
 		}
 	}
 
