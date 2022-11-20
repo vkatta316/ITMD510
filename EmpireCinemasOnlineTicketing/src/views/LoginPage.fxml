@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="BackGround" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <Button fx:id="LoginButton" layoutX="313.0" layoutY="257.0" mnemonicParsing="false" onAction="#LoginButtonOnClick" prefHeight="22.0" prefWidth="78.0" text="Login" />
+      <TextField fx:id="EmailField" layoutX="225.0" layoutY="126.0" prefHeight="42.0" prefWidth="150.0" promptText="Email" />
+      <PasswordField fx:id="PassField" layoutX="225.0" layoutY="194.0" prefHeight="42.0" prefWidth="150.0" promptText="Password" />
+      <Label fx:id="LoginLabel" alignment="CENTER" layoutX="248.0" layoutY="70.0" prefHeight="32.0" prefWidth="104.0" text="Login ">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="SignupButton" layoutX="199.0" layoutY="257.0" mnemonicParsing="false" onAction="#SignupButtonOnclick" prefHeight="26.0" prefWidth="78.0" text="Sign up" />
+   </children>
+</AnchorPane>

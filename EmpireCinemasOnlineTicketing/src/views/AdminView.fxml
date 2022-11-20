@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminViewController">
+   <children>
+      <Button fx:id="CreateMovieButton" layoutX="72.0" layoutY="92.0" mnemonicParsing="false" onAction="#CreateMovieButtonOnclick" prefHeight="30.0" prefWidth="151.0" text="Create movies" />
+      <Button fx:id="CreateManagerAcc" layoutX="72.0" layoutY="156.0" mnemonicParsing="false" onAction="#CreateManagerAccButtonOnclick" prefHeight="30.0" prefWidth="151.0" text="Create Manager accounts" />
+      <Button fx:id="DeleteMoviesButton" layoutX="72.0" layoutY="218.0" mnemonicParsing="false" onAction="#DeleteMoviesButtonOnclick" prefHeight="30.0" prefWidth="151.0" text="Delete Movies" />
+      <Button fx:id="SignoutButton" layoutX="395.0" layoutY="306.0" mnemonicParsing="false" onAction="#SignoutButtonOnclick" prefHeight="30.0" prefWidth="117.0" text="Sign out" />
+      <ImageView fitHeight="94.0" fitWidth="92.0" layoutX="423.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../download%20(1).jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

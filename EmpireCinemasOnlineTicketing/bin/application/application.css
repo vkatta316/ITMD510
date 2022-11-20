@@ -1,0 +1,17 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#PassField{
+
+    -fx-border-radius: 20px;
+  -fx-background-radius: 20px;
+}
+
+#EmailField{
+	-fx-border-radius: 20px;
+  -fx-background-radius: 20px;
+}
+#BackGround{
+	-fx-background-color: #A0E4CB;
+}
+#SignupBackground{
+	-fx-background-color: #59C1BD;
+}

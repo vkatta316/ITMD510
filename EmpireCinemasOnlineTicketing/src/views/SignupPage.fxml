@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="SignupBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+   <children>
+      <Button fx:id="CreateAccountButton" layoutX="313.0" layoutY="292.0" mnemonicParsing="false" onAction="#CreateAccountButtonOnclick" text="Create Account" />
+      <Button fx:id="LoginButton" layoutX="168.0" layoutY="292.0" mnemonicParsing="false" onAction="#LoginButtonOnclick" text="Login" />
+      <VBox layoutX="141.0" layoutY="69.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Label text="Email" />
+            <Label text="Password" />
+            <Label text="Repeat password" />
+            <Label text="First name" />
+            <Label text="Last name" />
+         </children>
+      </VBox>
+      <VBox layoutX="293.0" layoutY="69.0" prefHeight="200.0" prefWidth="159.0" spacing="10.0" AnchorPane.rightAnchor="148.0">
+         <children>
+            <TextField fx:id="EmailField" />
+            <PasswordField fx:id="PassField" />
+            <PasswordField fx:id="RepeatPassField" />
+            <TextField fx:id="FirstNameField" />
+            <TextField fx:id="LastNameField" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
