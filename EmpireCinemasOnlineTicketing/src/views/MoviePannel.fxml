@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="217.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MoviePannelController">
+<HBox fx:id="Hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="217.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MoviePannelController">
    <children>
-      <ImageView fx:id="movieimg" fitHeight="159.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="movieimg" fitHeight="159.0" fitWidth="117.0" onMouseClicked="#BookTickets" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Upcoming3.jpg" />
          </image>

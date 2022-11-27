@@ -1,3 +1,29 @@
-.button{
-   -fx-background-color: black
+.button-normal{
+   -fx-background-color: grey;
+   -fx-background-radius: 15px;
+   -fx-text-fill: #fff
+}
+.icon-button {
+    -icon-paint: #EB6440;
+    -fx-background-color: -icon-paint;
+    -size: 24;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"
+}
+.icon-minus{
+	-icon-paint: #EB6440;
+    -fx-background-color: -icon-paint;
+    -fx-min-height: 4;
+    -fx-max-height: 4;
+    -fx-min-width: 20;
+    -fx-shape: "M0 10h24v4h-24z"
+}
+.icon-button:hover {
+    -icon-paint: linear-gradient(to bottom, red, black);
+}
+.icon-minus:hover {
+    -icon-paint: linear-gradient(to bottom, red, black);
 }

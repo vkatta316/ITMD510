@@ -28,8 +28,7 @@ public class LoginController {
 	private Parent parent;
 	public String CheckLogin(String username,String password) throws SQLException
 	{	
-		ResultSet rs = Dbconnect.QueryForResult("select * from EMPIRE_CINEMAS where Email = '"+username+"' AND password ='"+password+"'");
-		int size = 0;
+		ResultSet rs = Dbconnect.QueryForResult("select * from EMPIRE_CINEMAS where Email = '"+username+"' AND password ='"+password+"'");		int size = 0;
 		String privilige = "0";
         while (rs.next()) {
         	UserModel.FirstName = rs.getString("Fname");

@@ -1,6 +1,7 @@
 package models;
 
 public class Moviemodel {
+	public static int Ticketprice = 0;
 	private String title;
 	private String price;
 	private String imgsrc;

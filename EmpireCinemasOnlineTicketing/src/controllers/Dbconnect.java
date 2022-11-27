@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Moviemodel;
+import models.RequestModel;
 
 public class Dbconnect {
 	   static final String DB_URL = "jdbc:mysql://www.papademas.net:3307/510labs?autoReconnect=true&useSSL=false";
@@ -26,7 +27,7 @@ public class Dbconnect {
 		   try
 	       {	 conn = DriverManager.getConnection(DB_URL, USER, PASS);
 	         // Extract data from result set
-	        	  System.out.println("Connected");
+	        	  
 	         
 	      } catch (SQLException e) {
 	         e.printStackTrace();
@@ -57,6 +58,23 @@ public class Dbconnect {
 			   mvm.setimgsrc(rs.getString("Movie")+".jpg");
 			   //mvm.setimgsrc("\\Users\\vinaychowdarykatta\\Desktop\\"+rs.getString("Movie")+".jpg");
 			   ls.add(mvm);
+		   }
+		   rs.close();
+		   st.close();
+		   conn.close();
+		   return ls;
+	   }
+
+	   public static List<RequestModel> GetAllRequest() throws SQLException
+	   {
+		   createcon();
+		   Statement st = conn.createStatement();
+		   ResultSet rs = st.executeQuery("Select * from RequestTable");
+		   List<RequestModel> ls = new ArrayList<>();
+		   while(rs.next())
+		   {
+			   RequestModel rm = new RequestModel(rs.getString("Email"),rs.getString("Amount"));
+			   ls.add(rm);
 		   }
 		   rs.close();
 		   st.close();
