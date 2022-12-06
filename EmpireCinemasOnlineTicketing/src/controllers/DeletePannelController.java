@@ -3,6 +3,7 @@ package controllers;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +33,10 @@ public class DeletePannelController {
 
     @FXML
     private Label Title;
+    
+    @FXML
+    private Moviemodel mv;
+
     public void SetData(Moviemodel mv)
     {
          DeleteButton.setShape(null);
@@ -46,6 +51,7 @@ public class DeletePannelController {
  			ImageView view = new ImageView(image);
  			
  			view.setFitHeight(35);
+ 			view.setFitWidth(35);
  			view.setPreserveRatio(true);
  			DeleteButton.setGraphic(view);
 
@@ -73,7 +79,16 @@ public class DeletePannelController {
     }
     public void DeleteButtonOnlcick(ActionEvent e)
     {
+    	
+    	try {
+			Dbconnect.RunQuery(String.format("DELETE FROM movies_list WHERE Movie='%s'",Title.getText()));
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
     	VBox vb = (VBox) Box.getParent();
         vb.getChildren().remove(Box);
+		
     }
 }

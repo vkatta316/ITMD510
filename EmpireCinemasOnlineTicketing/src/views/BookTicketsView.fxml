@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<DialogPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookTicketsController">
+<DialogPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookTicketsController">
    <content>
-      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="484.0" style="-fx-background-color: #59C1BD;">
+      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="484.0" style="-fx-background-color: #65647C;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.4000244140625" minWidth="10.0" prefWidth="159.00001220703126" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.2000366210938" minWidth="10.0" prefWidth="325.3999877929688" />
@@ -25,13 +25,13 @@
             <RowConstraints maxHeight="189.19998779296873" minHeight="10.0" prefHeight="99.0000244140625" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <DatePicker GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <DatePicker fx:id="Datepicker" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Text fill="#f7ecde" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick date" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="BookTicketsButton" mnemonicParsing="false" onAction="#BookTicketsButtonOnclick" prefHeight="40.0" prefWidth="100.0" styleClass="button-normal" stylesheets="@button.css" text="Book Tickets" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+            <Button fx:id="BookTicketsButton" mnemonicParsing="false" onAction="#BookTicketsButtonOnclick" prefHeight="40.0" prefWidth="100.0" styleClass="button-normal" stylesheets="@button.css" text="Book Tickets" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Text fill="#f7ecde" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of tickets" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <font>
                   <Font name="Times New Roman Bold" size="18.0" />

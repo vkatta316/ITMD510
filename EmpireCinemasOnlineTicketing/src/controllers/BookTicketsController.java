@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
@@ -38,11 +39,22 @@ public class BookTicketsController implements Initializable{
 
     @FXML
     private Button PlusButton;
-
+    @FXML
+    private DatePicker  Datepicker;
     @FXML
     void BookTicketsButtonOnclick(ActionEvent event) throws SQLException {
     	int cost = Integer.parseInt(Cost.getText().substring(2));
-    	if(cost>Integer.parseInt(UserModel.Balance))
+    	if(cost == 0)
+    	{
+    		Alert a = new Alert(AlertType.NONE,"Buy atleast 1 ticket!",ButtonType.CLOSE);
+			a.show();
+    	}
+    	else if(Datepicker.getValue()==null)
+    	{
+    		Alert a = new Alert(AlertType.NONE,"Date not Selected",ButtonType.CLOSE);
+			a.show();
+    	}
+    	else if(cost>Integer.parseInt(UserModel.Balance))
     	{
     		Alert a = new Alert(AlertType.NONE,"Not enough funds",ButtonType.CLOSE);
 			a.show();
@@ -51,7 +63,7 @@ public class BookTicketsController implements Initializable{
     	{	int newb = Integer.parseInt(UserModel.Balance)-cost;
     		UserModel.Balance = String.valueOf(newb);
     		Dbconnect.RunQuery("UPDATE empire_cinemas SET Balance = '"+newb+"' WHERE Email = '"+UserModel.Email+"'");
-    		Alert a = new Alert(AlertType.NONE,"Booking done!",ButtonType.CLOSE);
+    		Alert a = new Alert(AlertType.NONE,"Date: "+Datepicker.getValue()+"\n"+"No. of tickets:"+NumTickets.getText()+"\n"+"Movie: "+Moviemodel.titleview+"\n"+"Booking done!",ButtonType.CLOSE);
 			a.show();
     	}
     }

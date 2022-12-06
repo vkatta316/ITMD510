@@ -1,5 +1,7 @@
 package controllers;
 
+
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,21 +25,16 @@ import models.Moviemodel;
 
 public class MoviePannelController {
 	@FXML
-	private HBox Hbox;
+    private HBox Hbox;
 	@FXML
-	private ImageView movieimg;
-
-	@FXML
-	private Label mprice;
-
-	@FXML
-	private Label mtitle;	
+    private ImageView movieimg;
 
     @FXML
-    private HBox UpcomingDisplay;
-    
+    private Label mprice;
 
-	void SetData(Moviemodel mv) {
+    @FXML
+    private Label mtitle;
+    void SetData(Moviemodel mv) {
 		mtitle.setText(mv.gettitle());
 		mprice.setText("$ " + mv.getprice());
 		InputStream stream;
@@ -53,12 +50,11 @@ public class MoviePannelController {
 			e.printStackTrace();
 		}
 	}
-
-
-	@FXML
-	void BookTickets(MouseEvent event) throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader();
-		Moviemodel.Ticketprice = Integer.parseInt(mprice.getText().substring(2));
+    @FXML
+    void BookTickets(MouseEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	Moviemodel.titleview = mtitle.getText();
+    	Moviemodel.Ticketprice = Integer.parseInt(mprice.getText().substring(2));
 		fxmlLoader.setLocation(getClass().getResource("../views/BookTicketsView.fxml"));
 		DialogPane Dp = fxmlLoader.load();
 		BookTicketsController btc = fxmlLoader.getController();
@@ -66,5 +62,5 @@ public class MoviePannelController {
 		dialog.setDialogPane(Dp);
 		dialog.setTitle("Book tickets");
 		Optional<ButtonType> clickButton = dialog.showAndWait();
-	}
+    }
 }
