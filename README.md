@@ -2,7 +2,13 @@
 
 This project is aimed at building an interface for an online movie ticket booking system. Giving customers a convenient way to buy movie tickets is the main objective of the online ticket reservation system.
 
-At the front end, we have used JavaFX and SceneBuilder, and at the back end, a MySQL server.
+Technologies 
+
+JavaFX and SceneBuilder
+
+Database
+
+MySQL server.
 
 
 
