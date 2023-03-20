@@ -23,9 +23,6 @@ Manager Login- ak@gmail.com     ak@123
 
 User Login- vk@gmail.com        vk@123
 
-SignUp Customer
-
-<img width="372" alt="image" src="https://user-images.githubusercontent.com/113000548/226450937-56a55fe4-67c8-4cab-83e5-5a92a8525baf.png">
 
 Login for Admin:
 
